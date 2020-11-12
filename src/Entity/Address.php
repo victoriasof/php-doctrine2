@@ -1,8 +1,14 @@
 <?php
 declare(strict_types = 1);
 
+namespace App\Entity;
+
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Embeddable;
+
+
 /** @Embeddable */
-class address {
+class Address {
     /** @Column(type="string") **/
     private $street;
 
@@ -22,27 +28,27 @@ class address {
         $this->city = $city;
         $this->zipcode = $zipcode;
     }
-    
+
     public function getStreet(): string
     {
         return $this->street;
     }
-    
+
     public function setStreet(string $street)
     {
         $this->street = $street;
     }
-    
+
     public function getStreetNumber(): int
     {
         return $this->streetNumber;
     }
-    
+
     public function setStreetNumber(int $streetNumber)
     {
         $this->streetNumber = $streetNumber;
     }
-    
+
     public function getCity(): string
     {
         return $this->city;
@@ -57,7 +63,7 @@ class address {
     {
         return $this->zipcode;
     }
-    
+
     public function setZipcode(int $zipcode)
     {
         $this->zipcode = $zipcode;
