@@ -25,7 +25,7 @@ An entity contains persistable properties. A persistable property is an instance
 
 Entities can have relations with other entities (or with themselves) in the form of 1:N, 1:1 or N:N relationships.
 
-All these configuration is done with "annotations", little comments above the properties of a class. You can look into the file [Student.php](src/Entity/Student.php) to see it in action. This means that the comments have meaning in this, you cannot just remove them!
+All these configuration is done with "annotations", little comments above the properties of a class. You can look into the file [Student.php](Student.php) to see it in action. This means that the comments have meaning in this, you cannot just remove them!
 
 ## The mission 
 
@@ -39,9 +39,9 @@ Then install Doctrine using Composer and configure the database connection. You 
 You can copy most boilerplate setup code from the documentation, be sure to include into `createAnnotationMetadataConfiguration` the location where all your entities with annotations are. The default is `src`.
 
 ### Step 2: Create the Teacher entity
-We already proved the Student entity, you will have to create a Teacher entity. You can choose which data to store for the Teacher, but at least it should contain a name, an e-mail and an address.
+We already provided the Student entity, you will have to create a Teacher entity. You can choose which data to store for the Teacher, but at least it should contain a name, an e-mail and an address.
 
-If you are using Symfony, you can use the maker bundle to generate the entity for you: run `bin/console make:entity`.
+If you are using Symfony, you can use the maker bundle to generate the entity for you: run `bin/console make:entity`. (Don't forget to make:migration and actually migrate.)
 
 #### Separating Concerns using Embeddables
 We also provided the Address entity but this is a special case: it is an [embeddable](https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/tutorials/embeddables.html), that you will use on both the Student and the Teacher entity.
