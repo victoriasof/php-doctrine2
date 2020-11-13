@@ -1,0 +1,13 @@
+[13-Nov-2020 20:02:30 Europe/Helsinki] Array
+(
+    [0] => 1
+    [1] => 2
+    [2] => 3
+    [3] => 4
+    [4] => 5
+)
+
+[13-Nov-2020 20:02:52 Europe/Helsinki] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 132124672 bytes) in /var/www/php-doctrine/src/Controller/RestController.php on line 38
+[13-Nov-2020 20:02:52 Europe/Helsinki] PHP Fatal error:  Nesting level too deep - recursive dependency? in /var/www/php-doctrine/vendor/symfony/event-dispatcher/EventDispatcher.php on line 163
+[13-Nov-2020 20:07:29 Europe/Helsinki] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 132124672 bytes) in /var/www/php-doctrine/src/Controller/RestController.php on line 38
+[13-Nov-2020 20:07:29 Europe/Helsinki] PHP Fatal error:  Nesting level too deep - recursive dependency? in /var/www/php-doctrine/vendor/symfony/event-dispatcher/EventDispatcher.php on line 163

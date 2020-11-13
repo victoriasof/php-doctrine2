@@ -7,6 +7,10 @@ use Symfony\Component\HttpFoundation\Request;
 
 require dirname(__DIR__).'/vendor/autoload.php';
 
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+@ini_set('log_errors','On');
+@ini_set('error_log','/var/www/php-doctrine/php_logs.log');
+
 (new Dotenv())->bootEnv(dirname(__DIR__).'/.env');
 
 if ($_SERVER['APP_DEBUG']) {

@@ -11,23 +11,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class RestController extends AbstractController
 {
-
-    /**
-     * @Route("/", name="index", methods={"GET"})
-     */
-    public function index(): Response
-    {
-        $repository = $this->getDoctrine()->getRepository(Student::class);
-        $students = $repository->findAll();
-        $repository = $this->getDoctrine()->getRepository(Teacher::class);
-        $teachers = $repository->findAll();
-
-        return $this->render('index.html.twig', [
-            'students' => $students,
-            'teachers' => $teachers
-        ]);
-    }
-
     /**
      * @Route("/teachers", name="teachers", methods={"GET"})
      */
@@ -56,7 +39,6 @@ class RestController extends AbstractController
         $teacher->setName($name);
         $teacher->setEmail($email);
         $teacher->setAddress($address);
-        // TODO how should I add a teacher's students? Write in the PUT request all the students IDs to get them?
 
         // Save the new teacher
         $entityManager = $this->getDoctrine()->getManager();
@@ -174,6 +156,8 @@ class RestController extends AbstractController
      */
     public function add_student(): Response
     {
+        $entityManager = $this->getDoctrine()->getManager();
+
         // Get request data
         $request = Request::createFromGlobals();
         $data = json_decode($request->getContent());
@@ -188,10 +172,8 @@ class RestController extends AbstractController
         $student->setLastName($lastName);
         $student->setEmail($email);
         $student->setAddress($address);
-        // TODO how should I add a student's teacher? Write in the PUT request the teacher's ID if get him?
 
         // Save the new teacher
-        $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($student);
         $entityManager->flush();
 

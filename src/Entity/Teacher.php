@@ -35,7 +35,7 @@ class Teacher
     private $address;
 
     /**
-     * @ORM\OneToMany(targetEntity=Student::class, mappedBy="teacher")
+     * @ORM\OneToMany(targetEntity=Student::class, mappedBy="teacher", orphanRemoval=true)
      */
     private $students;
 
