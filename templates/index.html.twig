@@ -1,0 +1,18 @@
+{% block title %}PHP-Doctrine | Homepage{% endblock %}
+{% block body %}
+    <h2>Select a teacher for a student</h2>
+    <form action="{{ path('index') }}" method="post">
+        <select name="teacher" id="teacher">
+            {% for teacher in teachers %}
+                <option value="{{ teacher.id }}">{{ teacher.name }}</option>
+            {% endfor %}
+        </select>
+
+        <select name="student" id="student">
+            {% for student in students %}
+                <option value="{{ student.id }}">{{ student.firstName }} {{ student.lastName }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Add</button>
+    </form>
+{% endblock %}
