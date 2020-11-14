@@ -84,9 +84,7 @@ class RestController extends AbstractController
         $teacher = $entityManager->getRepository(Teacher::class)->find($id);
 
         if (!$teacher) {
-            if (!$teacher) {
-                return $this->json(["message" => "Teacher with ID: " . $id . " doesnt exist"]);
-            }
+            return $this->json(["message" => "Teacher with ID: " . $id . " doesnt exist"]);
         }
 
         // Update teacher and save
