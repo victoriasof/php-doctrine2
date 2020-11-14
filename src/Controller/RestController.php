@@ -238,7 +238,10 @@ class RestController extends AbstractController
      * @param $id
      * @return Response
      */
-    public function add_student_to_teacher($id): Response
+
+    /*
+
+        public function add_student_to_teacher($id): Response
     {
         // Get request data
         $request = Request::createFromGlobals();
@@ -263,4 +266,6 @@ class RestController extends AbstractController
 
         return $this->json(["message" => "Success"]);
     }
+
+    */
 }
